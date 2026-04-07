@@ -109,8 +109,15 @@ class _ContactSectionState extends State<ContactSection> {
 
         _ContactItem(
           icon: Icons.location_on,
-          title: 'Location',
+          title: 'Location (UAE)',
           value: PortfolioData.location,
+        ),
+        SizedBox(height: info.spacing(ResponsiveSpacing.lg)),
+
+        _ContactItem(
+          icon: Icons.location_on,
+          title: 'Location (Egypt)',
+          value: PortfolioData.location1,
         ),
         SizedBox(height: info.spacing(ResponsiveSpacing.lg)),
 
@@ -125,10 +132,19 @@ class _ContactSectionState extends State<ContactSection> {
 
         _ContactItem(
           icon: Icons.phone,
-          title: 'Phone',
+          title: 'Phone (UAE)',
           value: PortfolioData.phone,
           isLink: true,
           onTap: () => _launchURL('tel:${PortfolioData.phone}'),
+        ),
+        SizedBox(height: info.spacing(ResponsiveSpacing.lg)),
+
+        _ContactItem(
+          icon: Icons.phone,
+          title: 'Phone (Egypt)',
+          value: PortfolioData.phone1,
+          isLink: true,
+          onTap: () => _launchURL('tel:${PortfolioData.phone1}'),
         ),
       ],
     );
@@ -253,19 +269,19 @@ class _ContactItem extends StatelessWidget {
 
               isLink && onTap != null
                   ? GestureDetector(
-                      onTap: onTap,
-                      child: Text(
-                        value,
-                        style: const TextStyle(
-                          color: AppColors.textSecondary,
-                          decoration: TextDecoration.underline,
-                        ),
-                      ),
-                    )
+                onTap: onTap,
+                child: Text(
+                  value,
+                  style: const TextStyle(
+                    color: AppColors.textSecondary,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              )
                   : Text(
-                      value,
-                      style: const TextStyle(color: AppColors.textSecondary),
-                    ),
+                value,
+                style: const TextStyle(color: AppColors.textSecondary),
+              ),
             ],
           ),
         ),

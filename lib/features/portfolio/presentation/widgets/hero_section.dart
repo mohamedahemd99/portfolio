@@ -9,7 +9,10 @@ import '../../../../core/widgets/gradient_button.dart';
 import '../../../../core/widgets/gradient_text.dart';
 
 class HeroSection extends StatelessWidget {
-  const HeroSection({super.key});
+  final VoidCallback? onViewWork;
+  final VoidCallback? onGetInTouch;
+
+  const HeroSection({super.key, this.onViewWork, this.onGetInTouch});
 
   @override
   Widget build(BuildContext context) {
@@ -71,19 +74,19 @@ class HeroSection extends StatelessWidget {
                         repeatForever: true,
                         pause: const Duration(seconds: 2),
                         animatedTexts: PortfolioData.animatedTitles.map((
-                          title,
-                        ) {
+                            title,
+                            ) {
                           return TypewriterAnimatedText(
                             title,
                             textStyle: Theme.of(context)
                                 .textTheme
                                 .headlineMedium
                                 ?.copyWith(
-                                  fontSize: info.responsiveFontSize(
-                                    info.isMobile ? 24 : 32,
-                                  ),
-                                  color: AppColors.accentStart,
-                                ),
+                              fontSize: info.responsiveFontSize(
+                                info.isMobile ? 24 : 32,
+                              ),
+                              color: AppColors.accentStart,
+                            ),
                             speed: const Duration(milliseconds: 100),
                           );
                         }).toList(),
@@ -113,7 +116,7 @@ class HeroSection extends StatelessWidget {
                     GradientButton(
                       text: 'View My Work',
                       icon: Icons.work,
-                      onPressed: () {},
+                      onPressed: onViewWork,
                     ),
                     GradientButton(
                       text: 'Get In Touch',
@@ -121,7 +124,7 @@ class HeroSection extends StatelessWidget {
                       gradient: const LinearGradient(
                         colors: [AppColors.bgGlass, AppColors.bgGlassHover],
                       ),
-                      onPressed: () {},
+                      onPressed: onGetInTouch,
                     ),
                   ],
                 ),

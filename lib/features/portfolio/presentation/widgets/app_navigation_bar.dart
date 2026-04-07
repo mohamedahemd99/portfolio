@@ -84,14 +84,18 @@ class _AppNavigationBarState extends State<AppNavigationBar> {
   }
 
   Widget _buildLogo(BuildContext context) {
-    return ShaderMask(
-      shaderCallback: (bounds) =>
-          AppColors.primaryGradient.createShader(bounds),
-      child: Text(
-        'MA',
-        style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-          color: Colors.white,
-          fontWeight: FontWeight.w900,
+    return Container(
+      width: 44,
+      height: 44,
+      decoration: const BoxDecoration(
+        shape: BoxShape.circle,
+        gradient: AppColors.primaryGradient,
+      ),
+      padding: const EdgeInsets.all(2),
+      child: ClipOval(
+        child: Image.asset(
+          'assets/mohamed.png',
+          fit: BoxFit.cover,
         ),
       ),
     );

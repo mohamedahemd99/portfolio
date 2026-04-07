@@ -92,7 +92,9 @@ class PortfolioData {
   static const String name = 'Mohamed Ahmed';
   static const String role = 'Senior Flutter Developer | Team Lead';
   static const String location = 'Dubai, UAE';
+  static const String location1 = 'Egypt';
   static const String phone = '+971 56 227 9178';
+  static const String phone1 = '+20 121 0798091';
   static const String email = 'memocr426@gmail.com';
   static const String linkedIn =
       'https://linkedin.com/in/mohamed-ahmed-3090531a0';
@@ -109,12 +111,12 @@ class PortfolioData {
 
   static const String bioSummary =
       'Building scalable, high-performance mobile and multi-platform apps with Flutter, '
-      'real-time systems, and strong UI/UX execution. 4+ years of experience delivering '
+      'real-time systems, and strong UI/UX execution. 5+ years of experience delivering '
       'production-quality apps across iOS, Android, Web, and Desktop — with a track record '
       'in performance optimization, clean architecture, and cross-functional team leadership.';
 
   static const String aboutMe1 =
-      'Senior Flutter Developer and Team Lead with 4+ years of experience building high-quality '
+      'Senior Flutter Developer and Team Lead with 5+ years of experience building high-quality '
       'applications across iOS, Android, Web, and Desktop. Currently leading a cross-functional '
       'team at HOMES Real Estate Platform in Dubai — managing backend, frontend, mobile, UI/UX, '
       'and QA across full product delivery cycles.';
@@ -134,4 +136,275 @@ class AppDurations {
   static const Duration fast = Duration(milliseconds: 200);
   static const Duration normal = Duration(milliseconds: 300);
   static const Duration slow = Duration(milliseconds: 500);
+}
+
+// ─── Project data models ──────────────────────────────────────────────────────
+
+class ProjectData {
+  final String title;
+  final String description;
+  final IconData icon;
+  final List<String> skills;
+  final String? iosUrl;
+  final String? androidUrl;
+  final String? badge;
+  final List<String> images;
+
+  const ProjectData({
+    required this.title,
+    required this.description,
+    required this.icon,
+    required this.skills,
+    this.iosUrl,
+    this.androidUrl,
+    this.badge,
+    this.images = const [],
+  });
+}
+
+class CompanyGroup {
+  final String company;
+  final String period;
+  final IconData companyIcon;
+  final List<ProjectData> projects;
+
+  const CompanyGroup({
+    required this.company,
+    required this.period,
+    required this.companyIcon,
+    required this.projects,
+  });
+}
+
+class ProjectsData {
+  ProjectsData._();
+
+  static const List<CompanyGroup> groups = [
+    CompanyGroup(
+      company: 'AT World',
+      period: 'Dec 2024 – Present',
+      companyIcon: Icons.auto_awesome,
+      projects: [
+        ProjectData(
+          title: 'AI Homes',
+          description:
+          'Comprehensive real estate marketplace with AR and real-time data. '
+              'Connects developers, marketers and buyers in one AI-powered platform — '
+              'targeting 5M+ brokers across 212 countries with smart contracts and '
+              'white-label agency pages.',
+          icon: Icons.home_work,
+          skills: ['Flutter', 'AR', 'AI', 'Maps', 'Smart Contracts', 'Firebase'],
+          iosUrl: 'https://apps.apple.com/ae/app/homes/id6744656599',
+          androidUrl: 'https://play.google.com/store/apps/details?id=com.homes.radar',
+        ),
+        ProjectData(
+          title: 'AI Radar',
+          description:
+          'Personal travel & discovery assistant powered by Google Places. '
+              'Explore nearby attractions, restaurants, services and more through '
+              'Map View, Augmented Reality, and List View with real-time navigation.',
+          icon: Icons.explore,
+          skills: ['Flutter', 'AR', 'Google Places', 'AdMob', 'Maps'],
+          iosUrl: 'https://apps.apple.com/ae/app/radar/id6747173241',
+          androidUrl: 'https://play.google.com/store/apps/details?id=com.atworld.atradar',
+        ),
+        ProjectData(
+          title: 'AI Feasibility',
+          description:
+          'AI-powered real estate feasibility analysis in minutes. Instant '
+              'financial metrics (IRR, NPV, ROI, cash flow), scenario testing, '
+              'and UAE market insights for developers, investors, banks, and consultants.',
+          icon: Icons.analytics,
+          skills: ['Flutter', 'AI', 'Finance', 'Real Estate', 'Charts'],
+          iosUrl: 'https://apps.apple.com/ae/app/ai-feasibility/id6755543887',
+          androidUrl: 'https://play.google.com/store/apps/details?id=at.ai.feasibility.world',
+        ),
+        ProjectData(
+          title: 'HomesXP',
+          description:
+          'AI-driven virtual real estate platform that transforms property '
+              'investment. Reduces friction from off-plan investing with AI market '
+              'analysis, data-driven recommendations, and seamless transactions.',
+          icon: Icons.villa,
+          skills: ['Flutter', 'AI', 'Real Estate', 'Investment', 'Firebase'],
+          iosUrl: 'https://apps.apple.com/ae/app/homesxp/id6752358412',
+          androidUrl: 'https://play.google.com/store/apps/details?id=com.homesxp.homesxp',
+        ),
+      ],
+    ),
+    CompanyGroup(
+      company: 'Yummy.ps',
+      period: 'Oct 2024 – Jun 2025',
+      companyIcon: Icons.restaurant,
+      projects: [
+        ProjectData(
+          title: 'Yummy',
+          description:
+          'All-in-one delivery app for food, groceries, flowers, and more. '
+              'Features real-time tracking, loyalty points, in-app wallet, and a '
+              'special feature to send food & gifts to loved ones in Palestine from abroad.',
+          icon: Icons.delivery_dining,
+          skills: ['Flutter', 'UI Redesign', 'Real-time Tracking', 'Payments', 'Firebase'],
+          iosUrl: 'https://apps.apple.com/il/app/yummy-food-grocery-more/id1448247070',
+          androidUrl: 'https://play.google.com/store/apps/details?id=app.yummy.ps',
+          badge: '100K+ Downloads',
+        ),
+      ],
+    ),
+    CompanyGroup(
+      company: 'Syana Co.',
+      period: 'Jan 2024 – Nov 2024',
+      companyIcon: Icons.build_circle,
+      projects: [
+        ProjectData(
+          title: 'Syana',
+          description:
+          'On-demand maintenance & automotive app covering plumbing, electrical, '
+              'AC, and home services. Features a bidding system, invoice generation '
+              'via MyFatoorah, wallet, and Apple Pay support.',
+          icon: Icons.home_repair_service,
+          skills: ['Flutter', 'Maps', 'MyFatoorah', 'Apple Pay', 'Firebase', 'CI/CD'],
+        ),
+        ProjectData(
+          title: 'Syana Hero',
+          description:
+          'Service provider companion app for Syana. Professionals manage '
+              'incoming bids, jobs, invoices, and earnings with Firebase auth, '
+              'analytics, push notifications, and CI/CD pipelines.',
+          icon: Icons.engineering,
+          skills: ['Flutter', 'Firebase', 'Push Notifications', 'Payments', 'CI/CD'],
+        ),
+      ],
+    ),
+    CompanyGroup(
+      company: 'Root Co.',
+      period: 'Dec 2022 – Sep 2024',
+      companyIcon: Icons.developer_board,
+      projects: [
+        ProjectData(
+          title: 'WeCare',
+          description:
+          'IoT-powered school bus safety app. Integrates GPS live tracking, '
+              'NFC for student attendance, and live camera streaming from the bus — '
+              'giving parents full visibility and peace of mind.',
+          icon: Icons.bus_alert,
+          skills: ['Flutter', 'IoT', 'GPS Tracking', 'Live Streaming', 'NFC', 'Raspberry Pi'],
+        ),
+        ProjectData(
+          title: 'Logist – Client',
+          description:
+          'Heavy shipping request app for clients. Book truck deliveries, '
+              'track shipments live on Google Maps, and receive push notifications '
+              'on all status updates.',
+          icon: Icons.local_shipping,
+          skills: ['Flutter', 'Google Maps', 'Live Location', 'Push Notifications'],
+        ),
+        ProjectData(
+          title: 'Logist – Driver',
+          description:
+          'Driver companion for the Logist platform. Accept heavy shipping '
+              'jobs, navigate with real-time Google Maps, share live location '
+              'with clients, and manage deliveries end-to-end.',
+          icon: Icons.drive_eta,
+          skills: ['Flutter', 'Google Maps', 'Live Location', 'Push Notifications'],
+        ),
+        ProjectData(
+          title: 'Flexi',
+          description:
+          'All-in-one gym management ecosystem with three roles — clients, '
+              'coaches, and providers. Manage subscriptions, book sessions, track '
+              'fitness progress, and purchase gym-related products.',
+          icon: Icons.fitness_center,
+          skills: ['Flutter', 'Multi-role', 'Subscriptions', 'Payments', 'Firebase'],
+        ),
+      ],
+    ),
+    CompanyGroup(
+      company: 'Tqnia IT',
+      period: 'Apr 2022 – Mar 2023',
+      companyIcon: Icons.computer,
+      projects: [
+        ProjectData(
+          title: 'Tqnia CS',
+          description:
+          'Client portal for Tqnia IT — 15+ years in the Middle East. '
+              'Track project requests, support tickets, domain management, '
+              'and invoices all in one place.',
+          icon: Icons.support_agent,
+          skills: ['Flutter', 'Firebase', 'REST APIs', 'Push Notifications'],
+          iosUrl: 'https://apps.apple.com/sa/app/%D8%AA%D9%82%D9%86%D9%8A%D8%A9-cs/id6450683976',
+        ),
+        ProjectData(
+          title: 'From Home Meal',
+          description:
+          'Food ordering app with cash-on-delivery and secure online payment '
+              'gateway. Discover home-cooked meals and local food with a simple, '
+              'fast ordering experience.',
+          icon: Icons.soup_kitchen,
+          skills: ['Flutter', 'Payments', 'Firebase', 'Push Notifications'],
+          androidUrl: 'https://appgallery.huawei.com/#/app/C106764857',
+        ),
+        ProjectData(
+          title: 'Ajarhaa',
+          description:
+          'Digital leasing platform for cars, chalets, offices, and '
+              'electronics. Secure payments, flexible options, user listings '
+              'for passive income, and ratings & reviews.',
+          icon: Icons.key,
+          skills: ['Flutter', 'Rental', 'Booking', 'Maps', 'Payments'],
+          androidUrl: 'https://play.google.com/store/apps/details?id=com.inspireui.ajerha',
+        ),
+      ],
+    ),
+    CompanyGroup(
+      company: 'ForAll FA',
+      period: 'Apr 2021 – Mar 2022',
+      companyIcon: Icons.public,
+      projects: [
+        ProjectData(
+          title: 'ForAll – Client',
+          description:
+          'Global super app with 40+ services across 50+ countries and '
+              '300 cities in 17 languages. Shopping, beauty, travel, healthcare, '
+              'automotive, real estate, and more — all in one place.',
+          icon: Icons.apps,
+          skills: ['Flutter', 'Multi-service', 'Maps', 'Payments', 'Firebase'],
+          iosUrl: 'https://apps.apple.com/us/app/forall/id1592120593',
+          androidUrl: 'https://play.google.com/store/apps/details?id=com.easyindex.forall2030',
+        ),
+        ProjectData(
+          title: 'ForAll – Vendor',
+          description:
+          'Business portal for ForAll. List services, manage bookings, '
+              'and reach customers across 60+ countries.',
+          icon: Icons.storefront,
+          skills: ['Flutter', 'Multi-service', 'Dashboard', 'Firebase'],
+          iosUrl: 'https://apps.apple.com/us/app/forall-vendors/id1602962621',
+          androidUrl: 'https://play.google.com/store/apps/details?id=com.easyindex.favendor',
+        ),
+        ProjectData(
+          title: 'ForAll – Sales',
+          description:
+          'Sales management app for ForAll teams. Track performance across '
+              'roles (GM, Supervisor, Team Lead), manage your team, receive '
+              'commission alerts, and monitor deal activity.',
+          icon: Icons.leaderboard,
+          skills: ['Flutter', 'Analytics', 'Team Management', 'Firebase'],
+          iosUrl: 'https://apps.apple.com/us/app/forall-sales/id1607065808',
+          androidUrl: 'https://play.google.com/store/apps/details?id=com.forall.forallhr',
+        ),
+        ProjectData(
+          title: 'ForAll – Rides',
+          description:
+          'Delivery & rides driver app. Earn on your own schedule using '
+              'your car or scooter with flexible earnings, secure delivery '
+              'workflow, and fast payments.',
+          icon: Icons.two_wheeler,
+          skills: ['Flutter', 'Maps', 'Live Location', 'Payments', 'Firebase'],
+          iosUrl: 'https://apps.apple.com/us/app/forall-riders/id1600042031',
+          androidUrl: 'https://play.google.com/store/apps/details?id=com.easyindex.forallcap2030',
+        ),
+      ],
+    ),
+  ];
 }

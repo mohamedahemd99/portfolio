@@ -55,7 +55,13 @@ class _PortfolioPageState extends State<PortfolioPage> {
             controller: _scrollController,
             slivers: [
               // Hero Section
-              SliverToBoxAdapter(child: HeroSection(key: _heroKey)),
+              SliverToBoxAdapter(
+                child: HeroSection(
+                  key: _heroKey,
+                  onViewWork: () => _scrollToSection(_projectsKey),
+                  onGetInTouch: () => _scrollToSection(_contactKey),
+                ),
+              ),
 
               // About Section
               SliverToBoxAdapter(child: AboutSection(key: _aboutKey)),
@@ -121,7 +127,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
           return AnimatedOpacity(
             duration: const Duration(milliseconds: 300),
             opacity:
-                _scrollController.hasClients && _scrollController.offset > 500
+            _scrollController.hasClients && _scrollController.offset > 500
                 ? 1.0
                 : 0.0,
             child: FloatingActionButton(

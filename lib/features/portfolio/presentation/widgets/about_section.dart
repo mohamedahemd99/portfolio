@@ -72,31 +72,17 @@ class AboutSection extends StatelessWidget {
   }
 
   Widget _buildImage(ResponsiveInfo info) {
-    return Stack(
-      children: [
-        Container(
-          width: info.isMobile ? double.infinity : 320,
-          height: 320,
-          margin: const EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(AppSizes.radiusXl),
-            image: const DecorationImage(
-              image: AssetImage('assets/profile.png'),
-              fit: BoxFit.cover,
-            ),
-          ),
+    return Container(
+      width: info.isMobile ? double.infinity : 320,
+      height: 320,
+      margin: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(AppSizes.radiusXl),
+        image: const DecorationImage(
+          image: AssetImage('assets/mohamed.png'),
+          fit: BoxFit.cover,
         ),
-        Positioned.fill(
-          child: Container(
-            margin: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(AppSizes.radiusXl),
-              border: Border.all(width: 3, color: Colors.transparent),
-              gradient: AppColors.primaryGradient,
-            ),
-          ),
-        ),
-      ],
+      ),
     );
   }
 
@@ -123,7 +109,7 @@ class AboutSection extends StatelessWidget {
           children: [
             _HighlightCard(
               icon: Icons.code,
-              title: '4+ Years',
+              title: '5+ Years',
               subtitle: 'Professional Experience',
               info: info,
             ),
@@ -150,8 +136,10 @@ class AboutSection extends StatelessWidget {
           runSpacing: info.spacing(ResponsiveSpacing.md),
           children: [
             _InfoItem(icon: Icons.location_on, text: PortfolioData.location),
+            _InfoItem(icon: Icons.location_on, text: PortfolioData.location1),
             _InfoItem(icon: Icons.school, text: 'B.Sc. Computer Science & AI'),
             _InfoItem(icon: Icons.phone, text: PortfolioData.phone),
+            _InfoItem(icon: Icons.phone, text: PortfolioData.phone1),
             _InfoItem(icon: Icons.email, text: PortfolioData.email),
           ],
         ),
