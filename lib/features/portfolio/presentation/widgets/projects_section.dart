@@ -521,7 +521,6 @@ class _ImageGallery extends StatelessWidget {
           child: Image.asset(
             images[current],
             height: 300,
-            width: double.infinity,
             fit: BoxFit.cover,
             errorBuilder: (_, __, ___) => _ImageError(),
           ),

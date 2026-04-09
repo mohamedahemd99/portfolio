@@ -48,3 +48,20 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/apps/
+    - assets/apps/ajarha/
+    - assets/apps/feasibility/
+    - assets/apps/forall/
+    - assets/apps/forall_ride/
+    - assets/apps/forall_sales/
+    - assets/apps/forall_vendor/
+    - assets/apps/from_home_meal/
+    - assets/apps/homes/
+    - assets/apps/logosit/
+    - assets/apps/radar/
+    - assets/apps/syana/
+    - assets/apps/tqnia_cs/
+    - assets/apps/wecare/
+    - assets/apps/xp/
+    - assets/apps/yummy/
+
